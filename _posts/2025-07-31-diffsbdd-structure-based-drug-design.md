@@ -274,8 +274,8 @@ Panels **(F)** and **(G)** illustrate the role of resampling. Increasing the num
 
 Together, these capabilities make DiffSBDD a practical, versatile tool for medicinal chemistry workflows—from early-stage hit discovery to late-stage lead optimization.
 
-![Figure 8: Diverse molecular design tasks enabled by DiffSBDD’s conditional generation.]({{ site.baseurl }}/images/fig8.png)
-*Figure 8: DiffSBDD supports a variety of drug design scenarios using a unified inpainting mechanism. Tasks include scaffold hopping (A), elaboration (B), fragment merging (C), growing (D), and linking (E). Resampling studies (F–G) show that connectivity improves with more iterations.*
+![Figure 7: Diverse molecular design tasks enabled by DiffSBDD’s conditional generation.]({{ site.baseurl }}/images/fig8.png)
+*Figure 7: DiffSBDD supports a variety of drug design scenarios using a unified inpainting mechanism. Tasks include scaffold hopping (A), elaboration (B), fragment merging (C), growing (D), and linking (E). Resampling studies (F–G) show that connectivity improves with more iterations.*
 
 ## Experimental Validation and Results
 
@@ -296,8 +296,8 @@ Several performance dimensions were analyzed:
 - **Ring Size Distribution**: Assesses realism of generated molecular scaffolds.
 - **Enamine Similarity**: Indicates similarity to purchasable compounds from chemical catalogs.
 
-![Figure 7: Benchmark comparison of DiffSBDD vs. baseline models.]({{ site.baseurl }}/images/fig7.png)  
-*Figure 7: Benchmark comparison across CrossDocked (a–c) and Binding MOAD (d–f). Violin plots show Tanimoto similarity and Vina score difference (a, d). Bar charts compare ring-size frequencies (b, e). Molecular overlays (c, f) show QED and Vina scores for generated ligands.*
+![Figure 8: Benchmark comparison of DiffSBDD vs. baseline models.]({{ site.baseurl }}/images/fig7.png)  
+*Figure 8: Benchmark comparison across CrossDocked (a–c) and Binding MOAD (d–f). Violin plots show Tanimoto similarity and Vina score difference (a, d). Bar charts compare ring-size frequencies (b, e). Molecular overlays (c, f) show QED and Vina scores for generated ligands.*
 
 ### Key Findings
 
