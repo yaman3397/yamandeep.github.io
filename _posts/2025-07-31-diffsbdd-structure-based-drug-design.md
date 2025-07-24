@@ -22,7 +22,7 @@ Structure-based drug design (SBDD) aims to craft small molecules that fit a prot
 
 - [Introduction and Motivation](#introduction-and-motivation)  
 - [Background: From Screening to AI-Driven Design](#background-from-screening-to-ai-driven-design)  
-- [The DiffSBDD Approach – Technical Deep Dive](#the-diffsbbd-approach)
+- [The DiffSBDD Approach: Technical Deep Dive](#the-diffsbbd-approach-technical-deep-dive)  
 - [Revolutionary Applications](#revolutionary-applications)  
 - [Experimental Validation and Results](#experimental-validation-and-results)  
 - [Critical Analysis](#critical-analysis)  
@@ -69,10 +69,9 @@ DiffSBDD builds on these ideas by combining symmetry-aware modeling with a diffu
 
 This transition from rigid libraries to generative spatial modeling sets the stage for DiffSBDD’s core innovations. What follows is a closer look at how equivariant diffusion is reshaping the landscape of molecular generation.
 
-## The DiffSBDD Approach – Technical Deep Dive {#the-diffsbbd-approach}
+## The DiffSBDD Approach: Technical Deep Dive
 
 ### 1. Score-Based Diffusion Sampling
-
 Most generative models work like painters: they build up a molecule atom by atom, starting from nothing. DiffSBDD flips this logic on its head. Instead of constructing molecules step-by-step, it starts with pure noise—a cloud of random 3D points—and sculpts that noise into a molecule using a process called diffusion sampling.
 
 At the heart of this process is a score function, denoted as s_\theta(\mathbf{x}_t, t, C). This function doesn’t generate molecules directly; instead, it predicts the direction in which the current noisy structure should move to become more like a valid ligand—one that fits well into the given protein pocket C.
