@@ -90,7 +90,7 @@ This sampling loop is flexible: you can let it run from pure noise (to generate 
 
 > Think of it like a sculptor refining a rough block into a statue — except the sculptor has full awareness of the target shape (the protein pocket), and the statue gradually emerges through hundreds of symmetry-aware denoising steps.
 
-![Figure 1: Workflow of DiffSBDD from protein pocket input to 3D ligand generation via equivariant diffusion.](/images/fig1.png)
+![Figure 1: Workflow of DiffSBDD from protein pocket input to 3D ligand generation via equivariant diffusion.]({{ site.baseurl }}/images/fig1.png)
 *Figure 1: Workflow of DiffSBDD from protein pocket input to 3D ligand generation via equivariant diffusion.*
 
 # Score-based denoising loop
@@ -136,7 +136,7 @@ This message is then used to update the atom's internal state as the molecule co
 
 > In short, the graph isn’t just a data structure—it’s the way the model “feels” the molecule forming in space. It constantly adapts, helping the model make smarter decisions about where atoms should go next.
 
-![Figure 2: Representation of ligand and protein as spatial graphs used in DiffSBDD.](/images/fig2.png)
+![Figure 2: Representation of ligand and protein as spatial graphs used in DiffSBDD.]({{ site.baseurl }}/images/fig2.png)
 *Figure 2: Representation of ligand and protein as spatial graphs used in DiffSBDD.*
 
 ### 3. Conditional Generation and Inpainting
@@ -165,7 +165,7 @@ The inpainting mechanism also supports conditional tasks like:
 
 > In a way, it’s like giving the model a puzzle with a few pieces already in place. Instead of starting from scratch, it learns to complete the picture while keeping the existing pieces exactly where they are.
 
-![Figure 3: Conditional generation using inpainting in DiffSBDD.](/images/fig3.png)
+![Figure 3: Conditional generation using inpainting in DiffSBDD.]({{ site.baseurl }}/images/fig3.png)
 *Figure 3: The model masks known fragments (blue) and denoises only the unknown regions (gray → green) while conditioning on the protein context. This allows controlled generation for tasks like scaffold hopping, fragment linking, and R-group decoration.*
 
 ```python
@@ -200,7 +200,7 @@ where $$( \alpha )$$ controls how strongly the score biases the sampling process
 
 > You can think of it like molecular evolution under pressure—each round produces candidates, scores them, and promotes only the best. The model learns to “listen” to the feedback and evolve molecules that better satisfy the task.
 
-![Figure 4: Property optimization in DiffSBDD using oracle feedback and iterative refinement.](/images/fig4.png)
+![Figure 4: Property optimization in DiffSBDD using oracle feedback and iterative refinement.]({{ site.baseurl }}/images/fig4.png)
 *Figure 4: Property optimization in DiffSBDD using oracle feedback and iterative refinement. Molecules are iteratively denoised, scored, and re-sampled to optimize drug-like properties.*
 
 ```python
@@ -232,7 +232,7 @@ Mathematically, the difference lies in the symmetry group:
 
 > In simple terms, DiffSBDD respects the difference between your left hand and your right hand — something most models gloss over.
 
-![Figure 5: Reflection sensitivity in DiffSBDD allows the model to distinguish stereoisomers.](/images/fig5.png)
+![Figure 5: Reflection sensitivity in DiffSBDD allows the model to distinguish stereoisomers.]({{ site.baseurl }}/images/fig5.png)
 *Figure 5: Reflection sensitivity in DiffSBDD allows the model to distinguish stereoisomers such as R- and S-citalopram, which can have drastically different pharmacological properties.*
 
 ### 6. Unified Model Architecture
@@ -253,7 +253,7 @@ During training, the model learns to predict the correct score field based on no
 
 > In practice, this means that a single DiffSBDD model can be used for designing new ligands, optimizing old ones, or even linking fragments — just by tweaking the input format.
 
-![Figure 6: The full DiffSBDD architecture showing input processing, message passing, and score prediction for ligand generation.](/images/fig6.png)
+![Figure 6: The full DiffSBDD architecture showing input processing, message passing, and score prediction for ligand generation.]({{ site.baseurl }}/images/fig6.png)
 *Figure 6: The full DiffSBDD architecture showing input processing, message passing, and score prediction for ligand generation.*
 
 ## Revolutionary Applications
@@ -274,7 +274,7 @@ Panels **(F)** and **(G)** illustrate the role of resampling. Increasing the num
 
 Together, these capabilities make DiffSBDD a practical, versatile tool for medicinal chemistry workflows—from early-stage hit discovery to late-stage lead optimization.
 
-![Figure 8: Diverse molecular design tasks enabled by DiffSBDD’s conditional generation.](/images/fig8.png)
+![Figure 8: Diverse molecular design tasks enabled by DiffSBDD’s conditional generation.]({{ site.baseurl }}/images/fig8.png)
 *Figure 8: DiffSBDD supports a variety of drug design scenarios using a unified inpainting mechanism. Tasks include scaffold hopping (A), elaboration (B), fragment merging (C), growing (D), and linking (E). Resampling studies (F–G) show that connectivity improves with more iterations.*
 
 ## Experimental Validation and Results
@@ -296,7 +296,7 @@ Several performance dimensions were analyzed:
 - **Ring Size Distribution**: Assesses realism of generated molecular scaffolds.
 - **Enamine Similarity**: Indicates similarity to purchasable compounds from chemical catalogs.
 
-![Figure 7: Benchmark comparison of DiffSBDD vs. baseline models.](/images/fig7.png)  
+![Figure 7: Benchmark comparison of DiffSBDD vs. baseline models.]({{ site.baseurl }}/images/fig7.png)  
 *Figure 7: Benchmark comparison across CrossDocked (a–c) and Binding MOAD (d–f). Violin plots show Tanimoto similarity and Vina score difference (a, d). Bar charts compare ring-size frequencies (b, e). Molecular overlays (c, f) show QED and Vina scores for generated ligands.*
 
 ### Key Findings
@@ -345,7 +345,7 @@ Figure 9 illustrates several key use cases of property optimization:
 
 This illustrates DiffSBDD’s capacity to navigate trade-offs between affinity, selectivity, and synthesizability—crucial for real-world lead optimization tasks. The model effectively functions as a molecular policy engine, where each generation is guided by multi-objective scores, converging on candidates with favorable profiles<a href="#ref-6" title="Zhavoronkov et al. (2019) DDR1 Kinase Inhibitors">[6]</a>.
 
-![Figure 9: Property and selectivity optimization using DiffSBDD.](/images/fig9.png)
+![Figure 9: Property and selectivity optimization using DiffSBDD.]({{ site.baseurl }}/images/fig9.png)
 *Figure 9: DiffSBDD supports multi-objective optimization of molecules for improved drug-likeness, docking, and target specificity. Panels (A–D) show iterative improvement across QED, SA, and docking score. Panel (E) shows kinase overlay. Panel (F) shows optimization trajectory. Panel (G) visualizes specificity control in binding conformations.*
 
 ## Critical Analysis
